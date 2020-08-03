@@ -13,5 +13,3 @@ from allianceauth.eveonline.tasks import update_alliance, update_character, upda
 
 logger = logging.getLogger(__name__)
 
-TASK_PRIORITY = 7
-CHUNK_SIZE = 999
