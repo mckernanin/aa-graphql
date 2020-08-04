@@ -3,7 +3,9 @@ from setuptools import find_packages, setup
 from aagraphql import VERSION
 
 install_requires = [
-    'allianceauth'
+    'allianceauth', 
+    'graphene_django',
+    'graphene'
 ]
 
 this_directory = os.path.abspath(os.path.dirname(__file__))
@@ -22,8 +24,8 @@ setup(
     description='Alliance Auth GraphQL API',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author='AaronKable',
-    author_email='aaronkable@gmail.com',
+    author='',
+    author_email='',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
