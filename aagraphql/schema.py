@@ -1,8 +1,9 @@
 import graphene
+import aagraphql.modules.srp.schema
 
-from modules.srp.schema
 
-class Query(modules.srp.schema.Query, graphene.ObjectType):
+class Query(aagraphql.modules.srp.schema.Query, graphene.ObjectType):
     pass
+
 
 schema = graphene.Schema(query=Query)
