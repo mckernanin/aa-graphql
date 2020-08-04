@@ -17,11 +17,15 @@ class SRPUserRequestType(DjangoObjectType):
 
 class Query(object):
     fleets = graphene.List(SRPFleetType)
-    requests = graphene.List(SRPUserRequestType)
+    fleet_requests = graphene.List(SRPUserRequestType, fleet_id=graphene.Int())
 
     def resolve_fleets(self, info, **kwargs):
         return SrpFleetMain.objects.all()
 
-    def resolve_user_requests(self, info, **kwargs):
-        # We can easily optimize query count in the resolve method
-        return SrpUserRequest.objects.all()
+    def resolve_fleet_requests(self, info, **kwargs):
+        fleet_id = kwargs.get('fleet_id')
+        if fleet_id is not None:
+            fleet_main = SrpFleetMain.objects.get(id=fleet_id)
+            return fleet_main.srpuserrequest_set.select_related(
+                'character').order_by('srp_ship_name')
+        return None

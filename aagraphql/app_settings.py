@@ -14,4 +14,4 @@ def hr_active():
 
 
 def srp_active():
-    return 'srp' in settings.INSTALLED_APPS
+    return 'allianceauth.srp' in settings.INSTALLED_APPS
