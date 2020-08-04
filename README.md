@@ -5,9 +5,8 @@
 ## Installation
 
 1. Install the repo from git
-1. `pip install graphene graphene_django`
-1. add `'aagraphql'` to your `INSTALLED_APPS` in your project's `local.py`
-1. add the following to your `local.py`
+2. add `'aagraphql',` and `'graphene_django',` to your `INSTALLED_APPS` in your project's `local.py`
+3. add the following to your `local.py`
 ```python
 GRAPHENE = {
     'SCHEMA': 'aagraphql.schema.schema'
